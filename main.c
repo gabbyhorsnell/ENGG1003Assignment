@@ -13,7 +13,7 @@ int main(void){
     printf("To use the enigma cipher encription please enter 3\n");
     printf("To use the enigma cipher decription please enter 4\n");
     // Scanf will be inserted here after the whole code is finnished
-    int x=2;
+    int x=3;
  
     do{
         switch(x){
@@ -24,7 +24,7 @@ int main(void){
               caesarCipherDecrypt(); // function for running the caesar cipher decription  
             break;
             case 3:
-             enigmaCipherEncrypt();//enigmaCipherEncrypt(); //function for running the enigma cipher encription
+             enigmaCipherEncrypt(); //function for running the enigma cipher encription
             break;
             case 4:
                 //enigmaCipherDecrypt();  //function for running the enigma cipher decription 
@@ -94,64 +94,169 @@ void caesarCipherDecrypt(void){
      for(int n = 0; n < 1024; n++){
         if(msg[n] > 64 && msg[n] < 91){
             
-        }
         
+        // testing for each letter of the alphabet 
         swtich(msg[n]){
               
-                case A:
-                    msg[i] = msg[i] + rotation[0];
+                case 0:
+                   msg[n] = msg[n] - 97; // translating the ascii table
+                   msg[n] = msg[n] + rotation[0]; // moving the letters
+                   msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                   msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case B:
+                case 1:
+                   msg[n] = msg[n] - 97; // translating the ascii table
+                   msg[n] = msg[n] + rotation[1]; // moving the letters
+                   msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                   msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case C:
+                case 2:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[2]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case D:
+                case 3:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[3]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case E:
+                case 4:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[4]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case F:
+                case 5:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[5]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case G:
+                case 6:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[6]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case H:
+                case 7:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[7]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case I:
+                case 8:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[8]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case J:
+                case 9:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[9]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case K:
+                case 10:
+                 msg[n] = msg[n] - 97; // translating the ascii table
+                 msg[n] = msg[n] + rotation[10]; // moving the letters
+                 msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                 msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case L:
+                case 11:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[11]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case M:
+                case 12:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[12]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;  
-                case N:
+                case 13:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[13]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case O:
+                case 14:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[14]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case P:
+                case 15:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[15]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case Q:
+                case 16:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[16]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case R:
+                case 17:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[17]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case S:
+                case 18:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[18]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case T:
+                case 19:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[19]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case U:
+                case 20:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[20]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case V:
+                case 21:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[21]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case W:
+                case 22:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[22]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case X:
+                case 23:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[23]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case Y:
+                case 24:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[24]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
-                case Z:
+                case 25:
+                  msg[n] = msg[n] - 97; // translating the ascii table
+                  msg[n] = msg[n] + rotation[25]; // moving the letters
+                  msg[n] = msg[n] % 26; // accounting for the overflow i.e. z needs to move to the start of rotation
+                  msg[n] = msg[n] + 97; // moving it back into the alaphabet 
                 break;
             }
+        }
+
 
      }
  } 

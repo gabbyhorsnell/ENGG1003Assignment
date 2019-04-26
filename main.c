@@ -1,4 +1,4 @@
-#include <stdio.h>
+(#include <stdio.h>
 
 
 void caesarCipherEncrypt(void);
@@ -14,8 +14,8 @@ int main(void){
     printf("To use the enigma cipher encription please enter 3\n");
     printf("To use the enigma cipher decription please enter 4\n");
     // Scanf will be inserted here after the whole code is finnished
-    int x=3;
- 
+    int x;
+    scanf("%d", &x);
     do{
         switch(x){
             case 1:

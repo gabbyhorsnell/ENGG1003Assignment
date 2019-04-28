@@ -1,6 +1,6 @@
-(#include <stdio.h>
+#include <stdio.h>
 
-
+//functions for encryptions and decryptions
 void caesarCipherEncrypt(void);
 void caesarCipherDecrypt(void);
 void enigmaCipherEncrypt(void);
@@ -13,9 +13,9 @@ int main(void){
     printf("To use the ceaser cipher decription please enter 2\n ");
     printf("To use the enigma cipher encription please enter 3\n");
     printf("To use the enigma cipher decription please enter 4\n");
-    // Scanf will be inserted here after the whole code is finnished
+
     int x;
-    scanf("%d", &x);
+    scanf("%d", &x); // Allows user to put in their selection
     do{
         switch(x){
             case 1:
@@ -32,20 +32,24 @@ int main(void){
             break;
             default:
             printf("invalid imput\n");
+            
         }
     }while(x>4);
 } 
 // Function definition for caesar encription
 void caesarCipherEncrypt(void){
-    char msg[] = {"hello world"};
-    //msg = {"hello world"};
-    int rotation = 7 ;
+    char msg[1024];
+    printf("please enter a message to encrypt\n");
+    fgets(msg, 1024, stdin); // To imput message that contains spaces
+    int rotation;
+    printf("please enter the key\n");
+    scanf("%d" , &rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0) {  
-            msg[n] = msg[n] - 97; // Translating the ascii table
+            msg[n] = msg[n] - 64; // Translating the ascii table
             msg[n] = msg[n] + rotation; // Moving the letters
             msg[n] = msg[n] % 26; // Accounting for the overflow i.e. z needs to move to the start of rotation
-            msg[n] = msg[n] + 97; // Moving it back into the alaphabet 
+            msg[n] = msg[n] + 64; // Moving it back into the alaphabet 
         }
 
     }
@@ -54,15 +58,18 @@ void caesarCipherEncrypt(void){
 }
 // Function definiton for caesar decription 
 void caesarCipherDecrypt(void){
-    char msg[] = {"olssv dvysk"};
-    //msg = {"hello world"};
-    int rotation = 7 ;
+    char msg[1024];
+    printf("please enter a message to decrypt\n");
+    fgets(msg, 1024, stdin); // To imput a message that can contain spaces
+    int rotation;
+    printf("please enter the key\n");
+    scanf("%d" , rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0){  
-            msg[n] = msg[n] - 97; // Translating the ascii table
+            msg[n] = msg[n] - 64; // Translating the ascii table
             msg[n] = msg[n] + (26 - rotation); // Making full rotation 
             msg[n] = msg[n] % 26; // Accounting for the overflow i.e. z needs to move to the start of rotation
-            msg[n] = msg[n] + 97; // Moving it back into the alaphabet 
+            msg[n] = msg[n] + 64; // Moving it back into the alaphabet 
         }
     
   }
@@ -71,7 +78,9 @@ void caesarCipherDecrypt(void){
  // Function definition for Enigma Encryption
  void enigmaCipherEncrypt(void){
      char l = 0 ;
-     char msg[]= {"HELLO WORLD"}; //Hard coded message to encrypt
+     char msg[1024]; 
+     printf("please enter a message to encrypt\n");
+     fgets(msg, 1024, stdin);// to imput meassage that can contain spaces
      char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
            rotation[n] = rotation[n] + 64 ;          
@@ -95,7 +104,9 @@ void caesarCipherDecrypt(void){
  
  // Function  definition for the decription of Enigma Cipher
 void enigmaCipherDecrypt(void){
-     char msg[]= {"LFCCS HSVCD"};
+     char msg[1024];
+     printf("please enter a message to decrypt");
+     fgets(msg, 1024, stdin); // to imput a meassage that can contain spaces
      char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
     for(int n = 0; n < 26; n++){
         rotation[n] = rotation[n] + 64;

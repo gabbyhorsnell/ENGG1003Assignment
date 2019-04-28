@@ -14,9 +14,9 @@ int main(void){
     printf("To use the enigma cipher encription please enter 3\n");
     printf("To use the enigma cipher decription please enter 4\n");
 
-    int x;
-    scanf("%d", &x); // Allows user to put in their selection
+    int x=1;
     do{
+         scanf("%d", &x); // Allows user to put in their selection
         switch(x){
             case 1:
              caesarCipherEncrypt();  // Function for running the caesar cipher encription 
@@ -40,10 +40,10 @@ int main(void){
 void caesarCipherEncrypt(void){
     char msg[1024];
     printf("please enter a message to encrypt\n");
-    fgets(msg, 1024, stdin); // To imput message that contains spaces
-    int rotation;
+    scanf(" %[^\n] ", msg); // To imput message that contains spaces
+    int rotation= 7;
     printf("please enter the key\n");
-    scanf("%d" , &rotation);
+    scanf(" %d " , &rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0) {  
             msg[n] = msg[n] - 64; // Translating the ascii table
@@ -60,10 +60,10 @@ void caesarCipherEncrypt(void){
 void caesarCipherDecrypt(void){
     char msg[1024];
     printf("please enter a message to decrypt\n");
-    fgets(msg, 1024, stdin); // To imput a message that can contain spaces
-    int rotation;
+    scanf(" %[^\n] ", msg); // To imput a message that can contain spaces
+    int rotation=7;
     printf("please enter the key\n");
-    scanf("%d" , rotation);
+    scanf(" %d " , rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0){  
             msg[n] = msg[n] - 64; // Translating the ascii table
@@ -80,7 +80,7 @@ void caesarCipherDecrypt(void){
      char l = 0 ;
      char msg[1024]; 
      printf("please enter a message to encrypt\n");
-     fgets(msg, 1024, stdin);// to imput meassage that can contain spaces
+     scanf(" %[^\n] ", msg);// to imput meassage that can contain spaces
      char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
            rotation[n] = rotation[n] + 64 ;          
@@ -105,11 +105,11 @@ void caesarCipherDecrypt(void){
  // Function  definition for the decription of Enigma Cipher
 void enigmaCipherDecrypt(void){
      char msg[1024];
-     printf("please enter a message to decrypt");
-     fgets(msg, 1024, stdin); // to imput a meassage that can contain spaces
+     printf("please enter a message to decrypt\n");
+     scanf(" %[^\n] ", msg); // to imput a meassage that can contain spaces
      char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
     for(int n = 0; n < 26; n++){
-        rotation[n] = rotation[n] + 64;
+        rotation[n] = rotation[n] + 64; //changing value
     }
        for(int n=0 ; n < 1024 ; n++) {
           if(msg[n] > 64 && msg[n] < 91) { //Using only upercase letters 

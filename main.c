@@ -10,7 +10,7 @@ int main(void){
     // Menu for user
     printf("welcome to the encription decription program\n");
     printf("To use the caesar cipher encription please enter 1\n");
-    printf("To use the ceaser cipher decription please enter 2\n ");
+    printf("To use the ceaser cipher decription please enter 2\n");
     printf("To use the enigma cipher encription please enter 3\n");
     printf("To use the enigma cipher decription please enter 4\n");
 

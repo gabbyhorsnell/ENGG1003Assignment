@@ -88,7 +88,7 @@ void enigmaCipherEncrypt(void){
      for( int n=0 ; n < 26 ; n++){
            rotation[n] = rotation[n] + 64 ;        
         }*/
-    for(int n = 0; n < 12; n++){
+    for(int n = 0; n < 1024; n++){
         if(msg[n] > 64 && msg[n] < 91){
         l= msg[n] ; 
         l = l - 64 ; // Moving ascii table numbers
@@ -98,9 +98,9 @@ void enigmaCipherEncrypt(void){
 
         
     }
-    for(int n = 0; n < 12; n++){
-        printf("%c",  msg[n]);
-    }
+    //for(int n = 0; n < 1024; n++){
+        printf("%s",  msg);
+    //}
     printf("\n");
 }
   

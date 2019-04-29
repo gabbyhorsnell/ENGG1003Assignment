@@ -82,7 +82,7 @@ void enigmaCipherEncrypt(void){
     printf("please enter a message to encrypt\n");
     scanf(" %[0-9a-zA-Z ]", msg);// to imput meassage that can contain spaces
     char rotation[26];
-    printf("please enter 26 upercase letters/n");
+    printf("please enter 26 upercase letters\n");
     scanf("%26s" , &rotation);
     /* char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
@@ -101,7 +101,7 @@ void enigmaCipherEncrypt(void){
     for(int n = 0; n < 12; n++){
         printf("%c",  msg[n]);
     }
-
+    printf("\n");
 }
   
  
@@ -111,7 +111,7 @@ void enigmaCipherDecrypt(void){
     printf("please enter a message to decrypt\n");
     scanf(" %[0-9a-zA-Z ]", msg); // to imput a meassage that can contain spaces
     char rotation[26];
-    printf("please enter 26 upercase letters/n");
+    printf("please enter 26 upercase letters\n");
     scanf("%26s" , &rotation);
     /* char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
@@ -128,7 +128,7 @@ void enigmaCipherDecrypt(void){
         }
       
     }
-    printf("%s", msg);
+    printf("%s\n", msg);
 }
 
     

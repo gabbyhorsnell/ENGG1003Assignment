@@ -46,10 +46,10 @@ void caesarCipherEncrypt(void){
     scanf("%d" , &rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0) {  
-            msg[n] = msg[n] - 64; // Translating the ascii table
+            msg[n] = msg[n] - 65; // Translating the ascii table
             msg[n] = msg[n] + rotation; // Moving the letters
             msg[n] = msg[n] % 26; // Accounting for the overflow i.e. z needs to move to the start of rotation
-            msg[n] = msg[n] + 64; // Moving it back into the alaphabet 
+            msg[n] = msg[n] + 65; // Moving it back into the alaphabet 
         }
 
     }
@@ -63,13 +63,13 @@ void caesarCipherDecrypt(void){
     scanf(" %[0-9a-zA-Z ]", msg); // To imput a message that can contain spaces
     int rotation=7;
     printf("please enter the key\n");
-    scanf("%d" , rotation);
+    scanf("%d" , &rotation);
     for(int n=0; n<12; n++){
         if(msg[n] != 32 && msg[n] != 0){  
-            msg[n] = msg[n] - 64; // Translating the ascii table
+            msg[n] = msg[n] - 65; // Translating the ascii table
             msg[n] = msg[n] + (26 - rotation); // Making full rotation 
             msg[n] = msg[n] % 26; // Accounting for the overflow i.e. z needs to move to the start of rotation
-            msg[n] = msg[n] + 64; // Moving it back into the alaphabet 
+            msg[n] = msg[n] + 65; // Moving it back into the alaphabet 
         }
     
     }
@@ -83,7 +83,7 @@ void enigmaCipherEncrypt(void){
     scanf(" %[0-9a-zA-Z ]", msg);// to imput meassage that can contain spaces
     char rotation[26];
     printf("please enter 26 upercase letters/n");
-    scanf("%26s" , rotation);
+    scanf("%26s" , &rotation);
     /* char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
            rotation[n] = rotation[n] + 64 ;        
@@ -112,7 +112,7 @@ void enigmaCipherDecrypt(void){
     scanf(" %[0-9a-zA-Z ]", msg); // to imput a meassage that can contain spaces
     char rotation[26];
     printf("please enter 26 upercase letters/n");
-    scanf("%26s" , rotation);
+    scanf("%26s" , &rotation);
     /* char rotation[]={20, 14, 7, 24, 4, 6, 18, 1, 12, 7, 14, 24, 3, 15, 17, 19, 24, 23, 22, 25, 25, 16, 5, 8, 9, 3};
      for( int n=0 ; n < 26 ; n++){
            rotation[n] = rotation[n] + 64 ;        
